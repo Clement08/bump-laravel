@@ -34,7 +34,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::resource('/user', 'UserController');
     Route::resource('/project', 'ProjectController');
     Route::resource('/password', 'PasswordController');
-
+    Route::resource('/annonce', 'AnnonceController');
 
     Route::get('contact',
         ['as' => 'contact', 'uses' => 'ContactController@create']);
