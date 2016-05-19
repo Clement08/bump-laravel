@@ -16,11 +16,11 @@
 
             <ol class="breadcrumb">
                 <li>
-                    <a href="{{ route('post.index') }}">Annonces</a>
+                    <a href="{{ route('annonce.index') }}">Annonces</a>
                 </li>
                 @if(Auth::check())
                 <li>
-                    <a href="{{ route('post.create') }}">Rédiger une annonce</a>
+                    <a href="{{ route('annonce.create') }}">Rédiger une annonce</a>
                 </li>
                 @endif
             </ol>

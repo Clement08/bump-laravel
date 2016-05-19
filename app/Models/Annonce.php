@@ -3,7 +3,7 @@
 namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
+class Annonce extends Model
 {
     protected $fillable = [
         'annonce_name',

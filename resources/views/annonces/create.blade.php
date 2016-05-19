@@ -119,7 +119,7 @@
                                 {!! Form::radio('annonce_pointure', '45') !!}
                                 45
                                 <br>
-                                {!! Form::radio('pointure', '46') !!}
+                                {!! Form::radio('annonce_pointure', '46') !!}
                                 46
                             </div>
                         </div>
