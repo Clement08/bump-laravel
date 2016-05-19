@@ -25,18 +25,18 @@ class AnnonceController extends Controller
     public function store(Request $request){
         $this->validate($request, [
             'annonce_name' => 'required',
-            'annonce_info' => 'required',
+//            'annonce_info' => 'required',
             'annonce_email' => 'required',
             'annonce_numberphone' => 'required',
             'annonce_prix' => 'required',
-            'annonce_image' => 'required',
+//            'annonce_image' => 'required',
             'annonce_type' => 'required',
             'annonce_pointure' => 'required',
         ]);
 
         $annonce = new Annonce();
         $input = $request->input();
-        $input['annonce_author'] = Auth::user()->id;
+//        $input['annonce_author'] = Auth::user()->id;
 
         $annonce -> fill($input)->save();
 
