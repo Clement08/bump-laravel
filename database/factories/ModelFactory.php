@@ -36,7 +36,7 @@ $factory->define(App\Models\Comment::class, function (Faker\Generator $faker) {
     ];
 });
 
-$factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
+/*$factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
     return [
         'project_name' => $faker->name,
         'customer_infos' => $faker->sentence(6, true),
@@ -55,5 +55,18 @@ $factory->define(App\Models\Project::class, function (Faker\Generator $faker) {
         'constraints' => $faker->text(),
         'user_id' => $faker->numberBetween(1, 20),
         'status' => "En attente"
+    ];
+});*/
+
+$factory->define(App\Models\Annonce::class, function (Faker\Generator $faker) {
+    return [
+        'annonce_name' => $faker->sentence(3, true),
+        'annonce_infos' => $faker->sentence(15, true),
+        'annonce_email' => $faker->email,
+        'annonce_type' => $faker->sentence(1, true),
+        'annonce_numberphone' => $faker->phoneNumber,
+        'annonce_prix' => $faker->numberBetween(240, 1800),
+        'annonce_pointure' => $faker->numberBetween(39, 46),
+        'user_id' => $faker->numberBetween(1, 20),
     ];
 });
