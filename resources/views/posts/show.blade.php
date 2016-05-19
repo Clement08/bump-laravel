@@ -1,20 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container-fluid">
         @include('errors.message')
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-xs-12">
                 <a class="btn btn-info" href="{{route('post.index')}}">
                     Retour aux articles
                 </a>
             </div>
         </div>
         <div class="row">
-            <div class="col-md-10 col-md-offset-1">
+            <div class="col-xs-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>{{ $post->title }}</h3>
+                        <img class="img-responsive" src="http://media.meltystyle.fr/pmedia-2764427-ajust_640/plusieurs-points-de-vente-sont-prevus.jpg">
+                        <h3>{{ $post->title }} <br><small>Posté par {{ $post->user->name }} le {{$post->created_at}}</small></h3>
                     </div>
                     <div class="panel-body">
                         {{ $post->content }}
@@ -37,7 +38,7 @@
                         {!! Form::close() !!}
                     @endif
                 </div>
-                <div class="panel-body">
+                <div class="panel-body col-xs-12">
                     <h3>Commentaires</h3>
                     <hr>
                     @foreach($post->comments as $comment)

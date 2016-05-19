@@ -40,19 +40,19 @@ class AnnonceController extends Controller
 
         $annonce -> fill($input)->save();
 
-        return redirect()->route('annonce.index');
+        return redirect()->route('annonces.index');
 
     }
 
     public function show($id){
         $annonce = Annonce::findOrFail($id);
 
-        return view('annonce.show', compact ('annonce'));
+        return view('annonces.index', compact ('annonce'));
     }
 
     public function edit($id){
         $annonce = Annonce::findOrFail($id);
-        return view('annonce.edit', compact('annonce'));
+        return view('annonces.edit', compact('annonce'));
 
     }
 
@@ -68,7 +68,7 @@ class AnnonceController extends Controller
         $annonce -> fill($input)->save();
 
         return redirect()
-            ->route('annonce.show', $id)
+            ->route('annonces.show', $id)
             ->with('success', 'Votre annonce a bien été éditée');
     }
 
@@ -77,7 +77,7 @@ class AnnonceController extends Controller
         $annonce = Annonce::findOrFail($id);
         $annonce->delete();
         return redirect()
-            ->route('annonce.index', $id)
+            ->route('annonces.index', $id)
             ->with('success', 'Votre annonce a bien été supprimée');
     }
 }

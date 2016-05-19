@@ -7,14 +7,15 @@
                 <div class="col-md-10 col-md-offset-1">
                     @include('errors.message')
                 </div>
-                @foreach($list as $annonce)
+                @foreach($annonce as $annonces)
                     <div class="col-md-10 col-md-offset-1">
                         <div class="panel panel-default">
                             <div class="panel-heading">
                                 <a href="{{ route('annonce.show', $annonce->id) }}">
-                                    <h4>{{ $annonce->annonce_name}}</h4>
+                                    <h4>{{ $annonce->annonce_name }}</h4>
+                                    <br>
+                                    <h5>{{ $annonce->annonce_pointure }}</h5>
                                 </a>
-                                <h5 class="text-right">{{$annonce->status}}</h5>
                             </div>
                         </div>
                     </div>

@@ -26,12 +26,14 @@
                         {!! Form::textarea('content', '', ['class' =>'form-control', 'placeholder' => 'Contenu']) !!}
 
                         </div>
-
-                        {!! Form::submit('Publier l\'article', ['class' => 'btn btn-primary']) !!}
-
-                        {!! Form::close() !!}
                     </div>
+
+
+
                 </div>
+                {!! Form::submit('Publier l\'article', ['class' => 'btn waves-effect waves-light col-xs-12']) !!}
+
+                {!! Form::close() !!}
             </div>
         </div>
     </div>

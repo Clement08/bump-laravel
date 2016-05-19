@@ -12,8 +12,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{{ URL::asset('css/materialize.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
 
     <style>
         body {
@@ -38,59 +40,37 @@
                     <span class="icon-bar"></span>
                 </button>
 
-                <!-- Branding Image -->
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    BUMP
-                </a>
+
             </div>
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
+
+
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Blog<span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu" role="menu">
-                            <li><a href="{{ route('post.index') }}">Articles</a></li>
-                            @if(Auth::check())
-                                <li><a href="{{ route('post.create') }}">Rédiger un article</a></li>
-                            @endif
-                        </ul>
-                    </li>
-                    @if(Auth::check())
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projets<span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('project.create') }}">Soumettre un projet</a></li>
-                                @if(Auth::user()->isAdmin)
-                                    <li><a href="{{ route('project.index') }}">Liste des projets</a></li>
-                                @endif
-                            </ul>
-                        </li>
-                    @endif
-                    <li><a href="{{ url('/contact') }}">Contact</a></li>
+                    {{--<div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>--}}
+                    {{--<li><a href="{{ url('/home') }}">Home</a></li>--}}
+                <li><a href="#"><i class="fa fa-star-o"></i> Publications BUMPed</a></li>
+                <li><a href="{{ route('post.index') }}"><i class="fa fa-heart-o"></i> Dernières publications</a></li>
+                @if(Auth::check())
+                    <li><a href="{{ route('post.create') }}"><i class="fa fa-pencil"></i> Poster un article</a></li>
+                @endif
                 </ul>
 
                 <!-- Right Side Of Navbar -->
-                <ul class="nav navbar-nav navbar-right">
+                <div class="nav navbar-nav navbar-right">
+
                     <!-- Authentication Links -->
                     @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>
-                        <li><a href="{{ url('/register') }}">Register</a></li>
+                        <li><a href="{{ url('/login') }}"><i class="fa fa-sign-in"></i> Se connecter</a></li>
+                        <li><a href="{{ url('/register') }}"> <i class="fa fa-user"></i> Créer mon compte</a></li>
                     @else
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                {{ Auth::user()->name }} <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-btn fa-user"></i>Mon compte</a></li>
-                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                            </ul>
-                        </li>
+                        <li><a href="{{ route('user.show', Auth::user()->id) }}"><i class="fa fa-btn fa-user"></i> Mon compte - {{ Auth::user()->name }}</a></li>
+                        <li><a href="{{ url('/logout') }}"><i class="fa fa-sign-out"></i> Se déconnecter</a></li>
                     @endif
-                </ul>
+                </div>
             </div>
         </div>
     </nav>

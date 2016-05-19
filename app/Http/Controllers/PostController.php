@@ -27,7 +27,7 @@ class PostController extends Controller
         $list = $posts ->orderby('desc')->get;
         $list = $posts ->all();*/
 
-        $list = Post::paginate(5);
+        $list = Post::orderBy('created_at', 'desc')->paginate(8);
         return view('posts.index', compact('list'));
     }
 
