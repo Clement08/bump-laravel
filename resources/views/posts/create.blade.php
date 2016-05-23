@@ -7,7 +7,7 @@
             <div class="col-md-10 col-md-offset-1">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3>Ajouter un article</h3>
+                        <h3>Ajouter une annonce</h3>
                     </div>
                     <div class="panel-body">
                         <div class="form-group">
@@ -16,14 +16,14 @@
                         'method' => 'POST'))
                         !!}
 
-                        {!! Form::label('title', 'Titre') !!}
-                        {!! Form::text('title', '', ['class' =>'form-control', 'placeholder' => 'Mon titre']) !!}
+                        {!! Form::label('title', 'Annonce') !!}
+                        {!! Form::text('title', '', ['class' =>'form-control', 'placeholder' => 'Annonce']) !!}
                         </div>
 
                         <div class="form-group">
 
-                        {!! Form::label('content', 'Contenu') !!}
-                        {!! Form::textarea('content', '', ['class' =>'form-control', 'placeholder' => 'Contenu']) !!}
+                        {!! Form::label('content', 'Description') !!}
+                        {!! Form::textarea('content', '', ['class' =>'form-control', 'placeholder' => 'Description']) !!}
 
                         </div>
                     </div>
@@ -31,7 +31,7 @@
 
 
                 </div>
-                {!! Form::submit('Publier l\'article', ['class' => 'btn waves-effect waves-light col-xs-12']) !!}
+                {!! Form::submit('Publier l\'annonce', ['class' => 'btn waves-effect waves-light col-xs-12']) !!}
 
                 {!! Form::close() !!}
             </div>

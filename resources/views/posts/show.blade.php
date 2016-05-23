@@ -15,8 +15,14 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <img class="img-responsive" src="http://media.meltystyle.fr/pmedia-2764427-ajust_640/plusieurs-points-de-vente-sont-prevus.jpg">
+                        <div class="col-xs-12">
                         <h3>{{ $post->title }} <br><small>Posté par {{ $post->user->name }} le {{$post->created_at}}</small></h3>
+                        <div class="col-xs-2 col-xs-offset-10">
+                            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 138.37 143.09"><title>logo</title><text transform="translate(28.56 111.71) scale(1.04 1)" font-size="111.19" fill="#eb3254" font-family="Open Sans" font-weight="700" style="isolation:isolate">B</text><path d="M142.76,147.68H21.24a8,8,0,0,1-7.92-7.92V18.24a8,8,0,0,1,7.92-7.92H142.76a8,8,0,0,1,7.92,7.92V139.76A8,8,0,0,1,142.76,147.68Z" transform="translate(-12.82 -9.82)" fill="none" stroke="#eb3254" stroke-miterlimit="10"/></svg>
+                        </div>
+                        </div>
                     </div>
+                </div>
                     <div class="panel-body">
                         {{ $post->content }}
                     </div>

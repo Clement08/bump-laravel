@@ -27,7 +27,7 @@ class PostController extends Controller
         $list = $posts ->orderby('desc')->get;
         $list = $posts ->all();*/
 
-        $list = Post::orderBy('created_at', 'desc')->paginate(8);
+        $list = Post::orderBy('updated_at', 'desc')->paginate(8);
         return view('posts.index', compact('list'));
     }
 
@@ -112,7 +112,7 @@ class PostController extends Controller
 
         return redirect()
             ->route('post.show', $id)
-            ->with('success', 'Votre article a bien été édité');
+            ->with('success', 'BUMPED');
     }
 
     /**

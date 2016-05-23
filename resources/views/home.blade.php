@@ -18,12 +18,11 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::asset('css/app.css') }}">
 
     <style>
-        body {
-            font-family: 'Lato';
-        }
-
-        .fa-btn {
-            margin-right: 6px;
+        #landing-page {
+            background: url(http://www.antoine-piche.com/temp/asap.jpg) no-repeat center fixed !important;
+            -webkit-background-size: cover; /* pour anciens Chrome et Safari */
+            background-size: cover; /* version standardisée */
+            margin-top: 40% !important;
         }
     </style>
 </head>

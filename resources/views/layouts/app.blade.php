@@ -55,7 +55,7 @@
                 <li><a href="#"><i class="fa fa-star-o"></i> Publications BUMPed</a></li>
                 <li><a href="{{ route('post.index') }}"><i class="fa fa-heart-o"></i> Dernières publications</a></li>
                 @if(Auth::check())
-                    <li><a href="{{ route('post.create') }}"><i class="fa fa-pencil"></i> Poster un article</a></li>
+                    <li><a href="{{ route('post.create') }}"><i class="fa fa-pencil"></i> Poster une annonce</a></li>
                 @endif
                 </ul>
 

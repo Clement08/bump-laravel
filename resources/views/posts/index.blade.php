@@ -13,7 +13,7 @@
                             <a href="{{route('post.show', $post->id)}}">
                                 <h3>{{ $post->title }}</h3>
                             </a>
-                            <h5 class="text-right">{{$post->created_at}}</h5>
+                            <h5 class="text-right">{{$post->created_at}} <br><small>mise à jour le {{$post->updated_at}}</small></h5>
                         </div>
                         <div class="panel-body">
                             <br>
